@@ -1,0 +1,59 @@
+.resultado{
+    background-color: white;
+    width: 900px;
+    height: 2000px;
+    position: absolute;
+    top: 800px;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 20px;
+}
+.resultado h2{
+    position: absolute;
+    color: black;
+    background: none;
+    text-align: center;
+    top: 70px;
+    left: 50%;
+    transform: translate(-50%, -40px);
+}
+
+.resultado_formulario{
+    position: absolute;
+    color: black;
+    background: none;
+    text-align: center;
+    top: 70px;
+    left: 50%;
+    transform: translate(-50%, -40px);
+}
+.resultado p{
+    position: relative;
+    color: black;
+    background: none;
+    text-align: center;
+    top: 70px;
+    left: 50%;
+    transform: translate(-50%);    
+}
+
+.resultado_formulario{
+    position: relative;
+    color: black;
+    background: none;
+    text-align: start;
+    width: 800px;
+    top: 70px;
+    transform: translate(-50%);
+}
+
+.resultado_formulario p{
+    position: relative;
+    color: black;
+    background: none;
+    text-align: start;
+    top: 70px;
+    left: 50%;
+    transform: translate(-50%);
+    margin-bottom: 5px;    
+}

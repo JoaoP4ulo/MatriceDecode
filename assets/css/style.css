@@ -1,0 +1,125 @@
+*{
+    padding: 0;
+    margin: 0;
+    background-color: black;
+    z-index: 0;
+}
+
+
+.body{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.cabecalho{
+    position: absolute;
+    top: 60px;
+    padding-bottom: 20px;
+    z-index: 1;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: none;
+}
+
+.cabecalho a{
+    display: relative;
+    text-decoration: none;
+    color: aqua;
+    font-size: 20px;
+    padding: 40px;
+    background: none;
+}
+
+.cabecalho a:hover{
+    color: rgba(0, 255, 255, 0.44);
+}
+
+
+
+.formulario{
+    background-color: white;
+    top: 200px;
+    width: 900px;
+    height: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    z-index: 1;
+    gap: 30px;
+}
+
+.formulario_titulo{
+    position: absolute;
+    color: black;
+    background: none;
+    text-align: center;
+    top: 70px;
+    left: 50%;
+    transform: translate(-50%, -40px);
+}
+
+.formulario_campo_frase{
+    position: absolute;
+    top: 100px;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    background: none;
+    gap: 100px;
+}
+.formulario_campo_frase p{
+    color: black;
+    background: none;
+    text-align: center;
+    font-size: 18px;
+}
+
+#frase{
+    position: absolute;
+    top: 30px;
+    background: none;
+    width: 830%;
+    height: 50px;
+}
+
+.formulario_chave{
+    position: absolute;
+    top: 50%;
+    left: 53.5%;
+    transform: translate(-50%, -55%);
+    background: none;
+}
+
+.formulario_chave p{
+    color: black;
+    background: none;
+    text-align:start;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.chave{
+    position: relative;
+    background: none;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+#send{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: none;
+    background-color: aqua;
+    width: 70px;
+    height: 25px;
+    border: none;
+    border-radius: 20px;
+
+}
+#send:hover{
+    background-color: rgba(0, 255, 255, 0.44);
+}

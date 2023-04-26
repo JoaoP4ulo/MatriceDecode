@@ -1,0 +1,117 @@
+Primeiramente, vamos distribuir a frase 'eu sou lindo' em uma lista: e,u, ,s,o,u, ,l,i,n,d,o
+
+Agora trocamos cada caractere por seu respectivo número, obtendo assim: 5,21,55,19,15,21,55,12,9,14,4,15
+Obs: a lista de caractere está no read.me desse programa
+
+Com todos os numeros em lista, agora vamos dividi-la em n = 3 matrizes 2x2:
+Obs:" + " dada uma frase com um numero de caracteres impar, o programa completa a frase com o agumento '' (espaço vazio) = 0, até o numero de carecteres total seja um divisível inteiro por 4, assim temos as 3 matrizes a seguir:
+
+[5, 55]
+[21, 12]
+
+[55, 9]
+[19, 14]
+
+
+[15, 4]
+[21, 15]
+
+Para codificar iremos usar a formula: M' = C * M
+
+Onde: 
+M' = código
+C = chave
+M = matriz frase
+
+C = 
+|1,2|
+|3,4|
+
+M =
+[5, 55]
+[21, 12]
+
+[55, 9]
+[19, 14]
+
+[15, 4]
+[21, 15]
+
+
+Logo,
+
+M' =
+[47, 79]
+[99, 213]
+
+[93, 37]
+[241, 83]
+
+[57, 34]
+[129, 72]
+
+
+Pronto, agora temos um numero n = 3 de matrizes que representam a frase codificada.
+
+
+OPERAÇÃO REVERSA
+
+
+Agora, para decifrarmos o código usaremos a fórmula: M = (C^-1) * M'
+
+Onde: 
+M = matriz frase
+(C^-1) = inversa da matriz chave
+M' = código
+
+Para obtermos a matriz inversa da matriz chave usaremos a fórmula: (C^-1) * C = I'
+
+Onde: 
+C = matriz chave
+(C^-1) = inversa da matriz chave
+I = matriz identidade
+
+Por se uma matriz 2x2, sabemos que a identidade é: 
+|1,0|
+|0,1|
+ 
+Logo,
+
+(C^-1) = 
+-2,1
+1.5,-0.5
+ 
+M = (C^-1) * M' temos;
+
+[5, 55]
+[21, 12]
+
+[55, 9]
+[19, 14]
+
+[15, 4]
+[21, 15]
+
+
+Obs: se observarmos, obtemos o valor da matriz original M que obtemos anteriomernte;
+
+[5, 55]
+[21, 12]
+
+[55, 9]
+[19, 14]
+
+[15, 4]
+[21, 15]
+
+Agora, tudo que nos resta é fazer o processo contrário do início. Vamos agrupar os termos das matrizes em uma lista unica e substiruir os numeros pelos respectivos caracteres.
+
+[5, 21, 55, 19, 15, 21, 55, 12, 9, 14, 4, 15] '\n'
+
+Trocando os numeros por letras:
+
+['e', 'u', ' ', 's', 'o', 'u', ' ', 'l', 'i', 'n', 'd', 'o']
+
+Com isso obtemos a frase decodificada:
+
+eu sou lindo 
