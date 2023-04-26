@@ -151,12 +151,15 @@ function numero_em_letra(lista){
 }
 
 function imprimir_matriz(matriz){
-    for (let i = 0; i < matriz.length; i++) {
-        for (let j = 0; j < matriz[0].length; j++) {
-            console.log(matriz[i][j]);
+    let matriz_string = "";
+    let tam = (matriz.length);
+    for (let j = 0; j < tam; j++){
+        for (let i = 0; i < 2; i++) {
+            matriz_string = matriz_string + `[${String(matriz[j][i])}]`;
+      
         }
-        console.log('\n');
     }
+    return matriz_string;
 }
 
 
@@ -198,65 +201,66 @@ btn.addEventListener("click", function(e){
     const n = matriz.length
     const group_frase = String(frase.value).split('')
 
-    console.log('\nPASSO A PASSO');
     
-    console.log(`\nPrimeiramente, vamos distribuir a frase '${frase.value}' em uma lista: ${group_frase}\n`);
-    console.log(`Agora trocamos cada caractere por seu respectivo número, obtendo assim: ${lista}`);
-    console.log("Obs:" + " a lista de caractere está no read.me desse programa\n");
+    document.getElementById("l1").innerHTML = (`\nPrimeiramente, vamos distribuir a frase <strong style="background-color: aqua;">'${frase.value}'</strong> em uma lista: <strong style="background-color: aqua;">${group_frase}</strong>\n`);
+    document.getElementById("l2").innerHTML = (`Agora trocamos cada caractere por seu respectivo número, obtendo assim: <strong style="background-color: aqua;">${lista}</strong>`);
+   
+    document.getElementById("l3").innerHTML = (`Com todos os numeros em lista, agora vamos dividi-la em <strong style="background-color: aqua;">n = ${n}</strong> matrizes 2x2:`);
+    document.getElementById("l4").innerHTML = (`<strong style="color: red;background: none;">Obs:</strong> dada uma frase com um numero de caracteres impar, o programa completa a frase com o agumento '' (espaço vazio) = 0, até o numero de carecteres total seja um divisível inteiro por 4, assim temos as ${n} matrizes a seguir:\n`);
 
-    console.log(`Com todos os numeros em lista, agora vamos dividi-la em n = ${n} matrizes 2x2:`);
-    console.log(`Obs:" + " dada uma frase com um numero de caracteres impar, o programa completa a frase com o agumento '' (espaço vazio) = 0, até o numero de carecteres total seja um divisível inteiro por 4, assim temos as ${n} matrizes a seguir:\n`);
+    let matriz_l5 = imprimir_matriz(matriz);
+    document.getElementById("l5").innerHTML = matriz_l5
 
-    imprimir_matriz(matriz);
-    console.log("Para codificar iremos usar a formula: M' = C * M\n");
-    console.log("Onde: \nM' = código\nC = chave\nM = matriz frase\n");
-    console.log("C = ");
-
-    for (let x = 0; x < 2; x++) {
-        console.log(`${chave[x]}`);
+    let chave_string = ""
+    for (let i = 0; i < 2; i++) {  
+        chave_string = chave_string + `[${String(chave[i])}]`;
     }
-    console.log("\nM =");
 
-    imprimir_matriz(matriz);
-
-    console.log("Logo,\n\nM' =");
-
-    imprimir_matriz(codigo);
-
-    if (n == 1){
-        console.log(`Pronto, agora temos um numero n = ${n} de matriz que representam a frase codificada.\n`);
-    } else {
-        console.log(`Pronto, agora temos um numero n = ${n} de matrizes que representam a frase codificada.\n`);
-    }
-    console.log("OPERAÇÃO REVERSA\n")
     
-    console.log("Agora, para decifrarmos o código usaremos a fórmula: " + "M = (C^-1) * M'\n");
-    console.log("Onde: \nM = matriz frase\n(C^-1) = inversa da matriz chave\nM' = código\n");
-    console.log("Para obtermos a matriz inversa da matriz chave usaremos a fórmula: " + "(C^-1) * C = I'\n");
-    console.log("Onde: \nC = matriz chave\n(C^-1) = inversa da matriz chave\nI = matriz identidade\n");
-    console.log("Por se uma matriz 2x2, sabemos que a identidade é: ");
+    document.getElementById("l6").innerHTML = "C = "+ chave_string
 
-    for (let x = 0; x < 2; x++) {
-        console.log(`${identidade[x]}`);
-    }
-    console.log("\nLogo,\n\n" + "(C^-1) = ");
+    
 
-    for (let x = 0; x < 2; x++) {
-        console.log(`${chave_inv[x]}`);
-    }
-    console.log("\nAplicando a fórmula: " + "M = (C^-1) * M'" + " temos;\n");
+    // imprimir_matriz(matriz);
 
-    imprimir_matriz(codigo_inv);
-    console.log("Obs: " + "se observarmos, obtemos o valor da matriz original " + "M" + " que obtemos anteriomernte;\n");
-    imprimir_matriz(matriz);
-    console.log("Agora, tudo que nos resta é fazer o processo contrário do início. Vamos agrupar os termos das matrizes em uma lista unica e substiruir os numeros pelos respectivos caracteres.\n");
-    console.log(lista,"\n")
-    console.log("Trocando os numeros por letras:\n");
-    console.log(frase_list);
-    console.log("\nCom isso obtemos a frase decodificada:\n");
-    console.log(nova_frase,"\n");
+    // console.log("Logo,\n\nM' =");
 
-    /* funções relacionadas ao calculo de matrizes */
+    // imprimir_matriz(codigo);
+
+    // if (n == 1){
+    //     console.log(`Pronto, agora temos um numero n = ${n} de matriz que representam a frase codificada.\n`);
+    // } else {
+    //     console.log(`Pronto, agora temos um numero n = ${n} de matrizes que representam a frase codificada.\n`);
+    // }
+    // console.log("OPERAÇÃO REVERSA\n")
+    
+    // console.log("Agora, para decifrarmos o código usaremos a fórmula: " + "M = (C^-1) * M'\n");
+    // console.log("Onde: \nM = matriz frase\n(C^-1) = inversa da matriz chave\nM' = código\n");
+    // console.log("Para obtermos a matriz inversa da matriz chave usaremos a fórmula: " + "(C^-1) * C = I'\n");
+    // console.log("Onde: \nC = matriz chave\n(C^-1) = inversa da matriz chave\nI = matriz identidade\n");
+    // console.log("Por se uma matriz 2x2, sabemos que a identidade é: ");
+
+    // for (let x = 0; x < 2; x++) {
+    //     console.log(`${identidade[x]}`);
+    // }
+    // console.log("\nLogo,\n\n" + "(C^-1) = ");
+
+    // for (let x = 0; x < 2; x++) {
+    //     console.log(`${chave_inv[x]}`);
+    // }
+    // console.log("\nAplicando a fórmula: " + "M = (C^-1) * M'" + " temos;\n");
+
+    // imprimir_matriz(codigo_inv);
+    // console.log("Obs: " + "se observarmos, obtemos o valor da matriz original " + "M" + " que obtemos anteriomernte;\n");
+    // imprimir_matriz(matriz);
+    // console.log("Agora, tudo que nos resta é fazer o processo contrário do início. Vamos agrupar os termos das matrizes em uma lista unica e substiruir os numeros pelos respectivos caracteres.\n");
+    // console.log(lista,"\n")
+    // console.log("Trocando os numeros por letras:\n");
+    // console.log(frase_list);
+    // console.log("\nCom isso obtemos a frase decodificada:\n");
+    // console.log(nova_frase,"\n");
+
+    // /* funções relacionadas ao calculo de matrizes */
 
 
     
