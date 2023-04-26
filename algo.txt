@@ -4,7 +4,7 @@ Agora trocamos cada caractere por seu respectivo número, obtendo assim: 5,21,55
 Obs: a lista de caractere está no read.me desse programa
 
 Com todos os numeros em lista, agora vamos dividi-la em n = 3 matrizes 2x2:
-Obs:" + " dada uma frase com um numero de caracteres impar, o programa completa a frase com o agumento '' (espaço vazio) = 0, até o numero de carecteres total seja um divisível inteiro por 4, assim temos as 3 matrizes a seguir:
+Obs: dada uma frase com um numero de caracteres impar, o programa completa a frase com o agumento '' (espaço vazio) = 0, até o numero de carecteres total seja um divisível inteiro por 4, assim temos as 3 matrizes a seguir:
 
 [5, 55]
 [21, 12]

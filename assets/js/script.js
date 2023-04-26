@@ -170,6 +170,8 @@ const btn = document.querySelector("#send")
 
 btn.addEventListener("click", function(e){
 
+    document.getElementById("resultado").style.height="900px"
+
     e.preventDefault();
 
     const frase = document.querySelector('#frase');
@@ -201,22 +203,11 @@ btn.addEventListener("click", function(e){
     const n = matriz.length
     const group_frase = String(frase.value).split('')
 
-    document.getElementById("h1").innerHTML = ""; 
-    document.getElementById("l1").innerHTML = (`\nPrimeiramente, vamos distribuir a frase <strong style="background-color: aqua;">'${frase.value}'</strong> em uma lista: <strong style="background: none;">${group_frase}</strong>\n`);
-    document.getElementById("l2").innerHTML = (`Agora trocamos cada caractere por seu respectivo número, obtendo assim: <strong style="background: none;">${lista}</strong>`);
-   
-    document.getElementById("l3").innerHTML = (`Com todos os numeros em lista, agora vamos dividi-la em <strong style="background: none;">n = ${n}</strong> matrizes 2x2:`);
-    document.getElementById("l4").innerHTML = (`<strong style="color: red;background: none;">Obs:</strong> dada uma frase com um numero de caracteres impar, o programa completa a frase com o agumento '' (espaço vazio) = 0, até o numero de carecteres total seja um divisível inteiro por 4, assim temos as ${n} matrizes a seguir:\n`);
-
-    let matriz_l5 = imprimir_matriz(matriz);
-    document.getElementById("l5").innerHTML = matriz_l5
-
     let chave_string = ""
     for (let i = 0; i < 2; i++) {  
         chave_string = chave_string + `[${String(chave[i])}]`;
     }
 
-    
     document.getElementById("l6").innerHTML = "C = "+ chave_string
 
 
@@ -227,48 +218,13 @@ btn.addEventListener("click", function(e){
     document.getElementById("l8").innerHTML = "M' = " + matriz_l8
     
 
-    // imprimir_matriz(matriz);
 
-    // console.log("Logo,\n\nM' =");
-
-    // imprimir_matriz(codigo);
-
-    // if (n == 1){
-    //     console.log(`Pronto, agora temos um numero n = ${n} de matriz que representam a frase codificada.\n`);
-    // } else {
-    //     console.log(`Pronto, agora temos um numero n = ${n} de matrizes que representam a frase codificada.\n`);
-    // }
-    // console.log("OPERAÇÃO REVERSA\n")
+    let matriz_l9 = imprimir_matriz(chave_inv);
+    document.getElementById("l9").innerHTML = "(C^-1)' = " + matriz_l9
     
-    // console.log("Agora, para decifrarmos o código usaremos a fórmula: " + "M = (C^-1) * M'\n");
-    // console.log("Onde: \nM = matriz frase\n(C^-1) = inversa da matriz chave\nM' = código\n");
-    // console.log("Para obtermos a matriz inversa da matriz chave usaremos a fórmula: " + "(C^-1) * C = I'\n");
-    // console.log("Onde: \nC = matriz chave\n(C^-1) = inversa da matriz chave\nI = matriz identidade\n");
-    // console.log("Por se uma matriz 2x2, sabemos que a identidade é: ");
+    document.getElementById("l1").innerHTML = (`Obs: dada uma frase com um numero de caracteres impar, o programa completa a frase com o agumento '' (espaço vazio) = 0, até o numero de carecteres total seja um divisível inteiro por 4, assim temos as ${n} matrizes a seguir:`)
 
-    // for (let x = 0; x < 2; x++) {
-    //     console.log(`${identidade[x]}`);
-    // }
-    // console.log("\nLogo,\n\n" + "(C^-1) = ");
-
-    // for (let x = 0; x < 2; x++) {
-    //     console.log(`${chave_inv[x]}`);
-    // }
-    // console.log("\nAplicando a fórmula: " + "M = (C^-1) * M'" + " temos;\n");
-
-    // imprimir_matriz(codigo_inv);
-    // console.log("Obs: " + "se observarmos, obtemos o valor da matriz original " + "M" + " que obtemos anteriomernte;\n");
-    // imprimir_matriz(matriz);
-    // console.log("Agora, tudo que nos resta é fazer o processo contrário do início. Vamos agrupar os termos das matrizes em uma lista unica e substiruir os numeros pelos respectivos caracteres.\n");
-    // console.log(lista,"\n")
-    // console.log("Trocando os numeros por letras:\n");
-    // console.log(frase_list);
-    // console.log("\nCom isso obtemos a frase decodificada:\n");
-    // console.log(nova_frase,"\n");
-
-    // /* funções relacionadas ao calculo de matrizes */
-
-
+    
     
 
 });
