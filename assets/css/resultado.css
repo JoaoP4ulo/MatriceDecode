@@ -57,3 +57,12 @@
     transform: translate(-50%);
     margin-bottom: 5px;    
 }
+
+#h2{
+    position: absolute;
+    top: 800px;
+}
+#l2{
+    width: 800px;
+    right: 20px;
+}

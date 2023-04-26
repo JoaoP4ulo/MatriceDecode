@@ -201,11 +201,11 @@ btn.addEventListener("click", function(e){
     const n = matriz.length
     const group_frase = String(frase.value).split('')
 
-    
-    document.getElementById("l1").innerHTML = (`\nPrimeiramente, vamos distribuir a frase <strong style="background-color: aqua;">'${frase.value}'</strong> em uma lista: <strong style="background-color: aqua;">${group_frase}</strong>\n`);
-    document.getElementById("l2").innerHTML = (`Agora trocamos cada caractere por seu respectivo número, obtendo assim: <strong style="background-color: aqua;">${lista}</strong>`);
+    document.getElementById("h1").innerHTML = ""; 
+    document.getElementById("l1").innerHTML = (`\nPrimeiramente, vamos distribuir a frase <strong style="background-color: aqua;">'${frase.value}'</strong> em uma lista: <strong style="background: none;">${group_frase}</strong>\n`);
+    document.getElementById("l2").innerHTML = (`Agora trocamos cada caractere por seu respectivo número, obtendo assim: <strong style="background: none;">${lista}</strong>`);
    
-    document.getElementById("l3").innerHTML = (`Com todos os numeros em lista, agora vamos dividi-la em <strong style="background-color: aqua;">n = ${n}</strong> matrizes 2x2:`);
+    document.getElementById("l3").innerHTML = (`Com todos os numeros em lista, agora vamos dividi-la em <strong style="background: none;">n = ${n}</strong> matrizes 2x2:`);
     document.getElementById("l4").innerHTML = (`<strong style="color: red;background: none;">Obs:</strong> dada uma frase com um numero de caracteres impar, o programa completa a frase com o agumento '' (espaço vazio) = 0, até o numero de carecteres total seja um divisível inteiro por 4, assim temos as ${n} matrizes a seguir:\n`);
 
     let matriz_l5 = imprimir_matriz(matriz);
@@ -219,6 +219,12 @@ btn.addEventListener("click", function(e){
     
     document.getElementById("l6").innerHTML = "C = "+ chave_string
 
+
+    let matriz_l7 = imprimir_matriz(matriz);
+    document.getElementById("l7").innerHTML = "M = " + matriz_l7
+
+    let matriz_l8 = imprimir_matriz(codigo);
+    document.getElementById("l8").innerHTML = "M' = " + matriz_l8
     
 
     // imprimir_matriz(matriz);
